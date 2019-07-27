@@ -25,7 +25,7 @@ const loadGif = () => {
   fetch(url)
     .then(response => response.json())
     .then(content => {
-      // Check if the results is less the one to hide the button load
+      // Check if the results are less the one to hide the button load
       if (content.data.length < 1) {
         btnLoad.style.display = "none";
 
