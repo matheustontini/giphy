@@ -7,114 +7,133 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   font-size: 16px;
-  .container {
-    max-width: 1000px;
-    margin: auto;
-    header {
-      img {
-        max-width: 200px;
-      }
-      div {
-        display: flex;
-        input,
-        button {
-          height: 50px;
-          border: 0px;
-        }
-        input {
-          width: 90%;
-          font-size: 1.5rem;
-        }
-        button {
-          width: 10%;
-          background-image: linear-gradient(
-            -90deg,
-            rgb(223, 62, 110),
-            rgb(168, 0, 79)
-          );
-        }
-        button:hover {
-          background-image: linear-gradient(
-            -90deg,
-            rgb(168, 0, 79),
-            rgb(223, 62, 110)
-          );
-        }
-        img {
-          height: 40px;
-          max-width: 100%;
-        }
-      }
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+  .logo {
+    @media only screen and (max-width: 600px) {
+      width: 100%;
     }
-    .content {
-      margin-top: 20px;
-      .gif-content {
-        img {
-          max-width: 190px;
-          margin: 5px;
-        }
-      }
-      // Loading animation
-      .loading {
-        display: inline-block;
-        position: relative;
-        width: 64px;
-        height: 64px;
-        margin: auto;
-        div {
-          display: inline-block;
-          position: absolute;
-          left: 6px;
-          width: 13px;
-          background: #fff;
-          animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-        }
-        div:nth-child(1) {
-          left: 6px;
-          animation-delay: -0.24s;
-        }
-        div:nth-child(2) {
-          left: 26px;
-          animation-delay: -0.12s;
-        }
-        div:nth-child(3) {
-          left: 45px;
-          animation-delay: 0;
-        }
-      }
-      div {
-        margin-top: 20px;
-        text-align: center;
-        button {
-          font-size: 2rem;
-          color: #fff;
-          width: 75px;
-          height: 75px;
-          border: 0px;
-          border-radius: 50%;
-          background-image: linear-gradient(
-            -90deg,
-            rgb(48, 33, 187),
-            rgb(14, 111, 223)
-          );
-        }
-        button:hover {
-          background-image: linear-gradient(
-            -90deg,
-            rgb(14, 111, 223),
-            rgb(48, 33, 187)
-          );
-        }
-      }
+    width: 20%;
+    img {
+      width: 100%;
     }
-    footer {
-      margin-top: 20px;
-      font-size: 0.75rem;
-      text-align: center;
+  }
+  .search {
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+    width: 80%;
+    display: flex;
+    input,
+    button {
+      height: 50px;
+      border: 0px;
+    }
+    input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.5rem;
+    }
+    button {
+      @media only screen and (max-width: 600px) {
+        width: 100px;
+      }
+      padding: 5px;
+      width: 52px;
+      background-image: linear-gradient(
+        45deg,
+        rgb(153, 51, 255) 0%,
+        rgb(255, 102, 102) 100%
+      );
+    }
+    button:hover {
+      background-image: linear-gradient(
+        45deg,
+        rgb(153, 51, 255) 0%,
+        rgb(255, 102, 102) 50%,
+        rgb(153, 51, 255) 100%
+      );
+    }
+    img {
+      width: 30px;
     }
   }
 }
-
+.content {
+  margin-top: 20px;
+}
+.gif-content {
+  text-align: center;
+  img {
+    height: 150px;
+    margin: 5px;
+  }
+}
+// Loading animation
+.loading {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: #fff;
+    animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+  }
+  div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s;
+  }
+  div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0;
+  }
+}
+.load-more {
+  margin-top: 20px;
+  text-align: center;
+  button {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #fff;
+    height: 50px;
+    border: 0px;
+    border-radius: 15px;
+    background-image: linear-gradient(
+      -90deg,
+      rgb(48, 33, 187),
+      rgb(14, 111, 223)
+    );
+  }
+  button:hover {
+    background-image: linear-gradient(
+      -90deg,
+      rgb(14, 111, 223),
+      rgb(48, 33, 187)
+    );
+  }
+}
+footer {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  text-align: center;
+}
 // Loading animation
 @keyframes loading {
   0% {
