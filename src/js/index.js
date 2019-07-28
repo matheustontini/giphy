@@ -10,7 +10,7 @@ const title = document.querySelector("h1");
 const loading = document.querySelector(".loading");
 
 // Function called when the website is loaded, click to see more results or search for something
-const loadGif = (type, searchValue, offset) => {
+const loadGif = () => {
   // Mount a API URL with the type (serach or trending), key, and the offset
   let url = `https://api.giphy.com/v1/gifs/${type}?api_key=${giphyApiKey}&offset=${offset}&limit=10`;
 
@@ -70,20 +70,20 @@ const handleSearch = () => {
   // Save the search value in a variable to be able to clean to search input
   searchValue = search.value.trim();
   // Call the loadGif function to show teh results
-  loadGif(type, searchValue, offset);
+  loadGif();
   // Clean the search input
   search.value = "";
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   // Call the loadGif function when the website is loaded
-  loadGif(type, searchValue, offset);
+  loadGif();
 
   btnLoad.addEventListener("click", () => {
     // Set a offset to specifie the starting position of the new results
     offset += 10;
     // Call the loadGif function to show more results
-    loadGif(type, searchValue, offset);
+    loadGif();
   });
 
   btnSearch.addEventListener("click", handleSearch);
